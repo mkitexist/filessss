@@ -63,7 +63,7 @@ export default function CustomizedTabless() {
   //  {
   let p = null;
   p = incomeList.map((row, i) => {
-    return i + 1 <= 7 ? (
+    return i<7 ? (
       <StyledTableRow key={row.id}>
         <StyledTableCell component="th" scope="row">
           {row.name}
