@@ -65,7 +65,7 @@ export default function CustomizedTables() {
   //  {
   let p = null;
   p = incomeList.map((row, i) => {
-    return i + 1 <= 31 ? (
+    return i<= 30 ? (
       <StyledTableRow key={row.id}>
         <StyledTableCell component="th" scope="row">
           {row.name}
