@@ -25,6 +25,15 @@ function App() {
   let [expense, setExpense] = useState("");
   const [incomeList, setIncomelist] = useState([]);
   useEffect(() => {
+      var regEx = /^\d{4}-\d{2}-\d{2}$/;
+    let p = incomedate.match(regEx) != null;
+    if (!p) {
+      return swal({
+        title: "invalid date format",
+        icon: "warning",
+        dangerMode: true,
+      });
+    }
     Axios.get("https://usingmongodb.herokuapp.com/moneyManager/getmoney").then(
       (response) => {
         console.log(response.data);
